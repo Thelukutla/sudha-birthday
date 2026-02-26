@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Happy Birthday Sudha ❤️</title>
+    <!-- Google font for a soft, elegant look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Floating hearts background -->
+    <div id="hearts" aria-hidden="true"></div>
+
+    <!-- Full-screen hero -->
+    <main class="hero">
+      <div class="hero-inner">
+        <h1 class="title">Happy Birthday Sudha ❤️</h1>
+        <p class="subtitle">To the most beautiful and simple soul in my life</p>
+        <div class="controls">
+          <button id="surpriseBtn" class="btn">Click for a Surprise</button>
+          <button id="audioToggle" class="audio-btn" aria-pressed="false" title="Play/Pause music">
+            <span id="audioIcon">▶️</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Surprise card (hidden initially) -->
+    <div id="surpriseCard" class="card hidden" role="dialog" aria-labelledby="cardTitle">
+      <button id="closeCard" class="close" aria-label="Close">✕</button>
+      <h2 id="cardTitle">A Special Message for Sudha</h2>
+      <p class="message">
+        Dear Sudha —
+        <br><br>
+        On this beautiful day, I celebrate you: your simple heart, your radiant smile, and the kindness you share so freely. You make ordinary moments feel magical and every day brighter just by being you. You are graceful, gentle, and deeply special to me. Wishing you a birthday filled with warmth, laughter, and all the love you deserve.
+        <br><br>
+        With all my love,
+        <br>
+        Lokesh
+      </p>
+    </div>
+
+    <!-- Photo placeholder -->
+    <section class="photo-section">
+        <div class="photo-card">
+            <img src="sudha.jpg" alt="Sudha's Photo" class="photo-image">
+            <p class="photo-caption">A beautiful memory ❤️</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">Made with ❤️ by Lokesh</footer>
+
+    <!-- Audio (placeholder file - add your own romantic instrumental at assets/romantic.mp3) -->
+    <audio id="bgAudio" loop src="assets/romantic.mp3"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

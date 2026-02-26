@@ -1,0 +1,119 @@
+/*
+  styles.css
+  Soft, romantic, responsive styles for the birthday page
+*/
+:root{
+  --pink:#ffd6e8;
+  --lavender:#d9c8ff;
+  --white:#ffffff;
+  --muted:#6b5b6b;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg,var(--pink),var(--lavender));
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Hero */
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:4rem 1.5rem;
+  position:relative;
+}
+.hero-inner{
+  text-align:center;
+  background:rgba(255,255,255,0.65);
+  padding:2.5rem 2rem;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(100,70,90,0.12);
+  backdrop-filter:blur(6px);
+  max-width:900px;
+  width:100%;
+  animation:fadeInUp .9s ease forwards;
+  transform:translateY(10px);
+}
+.title{
+  font-family:'Playfair Display', serif;
+  margin:0 0 .4rem 0;
+  font-size:clamp(2.2rem,4vw,4rem);
+  color:#6f2b5d;
+}
+.subtitle{
+  margin:0 0 1.2rem 0;
+  font-size:1.05rem;
+  color:#6b5269;
+}
+.controls{display:flex;gap:.8rem;align-items:center;justify-content:center;margin-top:1rem}
+.btn{
+  background:linear-gradient(90deg,#ff9fc8,#caa3ff);
+  border:none;color:white;padding:.8rem 1.2rem;border-radius:999px;font-weight:600;cursor:pointer;
+  box-shadow:0 6px 18px rgba(140,80,120,0.18);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn:active{transform:translateY(1px)}
+.audio-btn{
+  background:transparent;border:2px solid rgba(111,43,93,0.12);padding:.6rem;border-radius:10px;cursor:pointer;font-size:1.1rem
+}
+
+/* Surprise card */
+.card{
+  position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.95);width:clamp(300px,78%,720px);background:rgba(255,255,255,0.98);border-radius:16px;padding:1.5rem 1.6rem;box-shadow:0 20px 50px rgba(90,50,70,0.18);z-index:60;opacity:0;pointer-events:none;transition:all .45s cubic-bezier(.2,.9,.2,1);
+}
+.card.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+.card .close{position:absolute;right:12px;top:10px;border:none;background:transparent;font-size:1.1rem;cursor:pointer}
+.card h2{margin:0 0 .6rem 0;font-family:'Playfair Display',serif;color:#5b2a55}
+.message{line-height:1.6;color:#5f505c}
+.hidden{display:block}
+
+/* Photo section */
+.photo-section{display:flex;justify-content:center;padding:2.2rem 1rem}
+.photo-card{background:rgba(255,255,255,0.6);padding:1rem;border-radius:12px;max-width:420px;text-align:center}
+.photo-placeholder{height:230px;background:linear-gradient(180deg,#fff0f6,#f3ecff);display:flex;align-items:center;justify-content:center;border-radius:10px;color:#7b5a6b;font-weight:600}
+.photo-caption{margin:.6rem 0 0 0;color:#6b5269}
+
+/* Footer */
+.site-footer{padding:1rem;text-align:center;color:#6b5269;font-size:.95rem}
+
+/* Floating hearts container (hearts created dynamically) */
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:10}
+
+/* Animations */
+@keyframes floatUp{
+  0%{transform:translateY(0) scale(0.9);opacity:0}
+  10%{opacity:1}
+  100%{transform:translateY(-120vh) scale(1.1);opacity:0}
+}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* Responsive tweaks */
+@media (max-width:640px){
+  .hero{padding:3rem 1rem}
+  .hero-inner{padding:1.6rem}
+  .controls{flex-direction:column}
+  .audio-btn{width:48px;height:48px}
+}
+
+/* accessibility focus outlines */
+button:focus{outline:3px solid rgba(120,70,110,0.18);outline-offset:2px}
+
+
+.photo-image {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.photo-image:hover {
+  transform: scale(1.05);
+}
