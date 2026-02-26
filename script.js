@@ -11,14 +11,36 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const audioToggle = document.getElementById('audioToggle');
   const audioIcon = document.getElementById('audioIcon');
   const heartsContainer = document.getElementById('hearts');
+  const overlay = document.getElementById('overlay');
 
   // Show surprise card with animation
-  surpriseBtn.addEventListener('click', ()=>{
+  function openCard(){
     surpriseCard.classList.add('show');
     // gentle focus for a11y
     surpriseCard.setAttribute('aria-hidden','false');
     surpriseCard.querySelector('.close').focus();
+  }
+
+  // click handlers
+  surpriseBtn.addEventListener('click', openCard);
+  document.querySelectorAll('.symbol').forEach(el=>{
+    el.addEventListener('click', openCard);
   });
+
+  // overlay logic: first click anywhere hides it and triggers the card
+  function revealPage(){
+    if(overlay){
+      overlay.classList.add('hidden');
+      setTimeout(()=>overlay.remove(),600);
+    }
+    // do not open the card automatically, user can click the button or symbols
+  }
+  if(overlay){
+    overlay.addEventListener('click', revealPage);
+    overlay.addEventListener('keydown', e=>{
+      if(e.key==='Enter' || e.key===' ') revealPage();
+    });
+  }
 
   closeCard.addEventListener('click', ()=>{
     surpriseCard.classList.remove('show');

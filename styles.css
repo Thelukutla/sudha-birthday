@@ -85,6 +85,19 @@ body{
 /* Floating hearts container (hearts created dynamically) */
 #hearts{position:fixed;inset:0;pointer-events:none;z-index:10}
 
+/* full-screen initial overlay */
+.overlay{
+  position:fixed;inset:0;
+  background:rgba(255,255,255,0.95);
+  display:flex;align-items:center;justify-content:center;
+  z-index:120;
+  cursor:pointer;
+  transition:opacity .6s ease;
+}
+.overlay.hidden{opacity:0;pointer-events:none}
+.overlay-text{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3.2rem);color:#6f2b5d;text-align:center;}
+
+
 /* Animations */
 @keyframes floatUp{
   0%{transform:translateY(0) scale(0.9);opacity:0}
@@ -103,6 +116,10 @@ body{
 
 /* accessibility focus outlines */
 button:focus{outline:3px solid rgba(120,70,110,0.18);outline-offset:2px}
+
+/* clickable symbol emoji */
+.symbol{cursor:pointer;display:inline-block;line-height:1}
+.symbol:focus{outline:2px solid rgba(120,70,110,0.18);outline-offset:2px}
 
 
 .photo-image {
