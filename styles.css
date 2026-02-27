@@ -74,8 +74,34 @@ body{
 .hidden{display:block}
 
 /* Photo section */
-.photo-section{display:flex;justify-content:center;padding:2.2rem 1rem}
-.photo-card{background:rgba(255,255,255,0.6);padding:1rem;border-radius:12px;max-width:420px;text-align:center}
+.photo-section{
+  padding:3rem 1.5rem;
+  text-align:center;
+}
+.gallery-title{
+  font-family:'Playfair Display',serif;
+  color:#5b2a55;
+  margin:0 0 2rem 0;
+  font-size:clamp(1.6rem,4vw,2.2rem);
+}
+.photo-gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.5rem;
+  max-width:1200px;
+  margin:0 auto;
+}
+.photo-card{
+  background:rgba(255,255,255,0.6);
+  padding:0.8rem;
+  border-radius:16px;
+  text-align:center;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.photo-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(100,70,90,0.15);
+}
 .photo-placeholder{height:230px;background:linear-gradient(180deg,#fff0f6,#f3ecff);display:flex;align-items:center;justify-content:center;border-radius:10px;color:#7b5a6b;font-weight:600}
 .photo-caption{margin:.6rem 0 0 0;color:#6b5269}
 
@@ -112,6 +138,8 @@ body{
   .hero-inner{padding:1.6rem}
   .controls{flex-direction:column}
   .audio-btn{width:48px;height:48px}
+  .photo-gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
+  .photo-section{padding:2rem 1rem}
 }
 
 /* accessibility focus outlines */
